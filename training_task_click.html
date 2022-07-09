@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    div {
+        width: 100px;
+        height: 100px;
+        border: 2px solid blue;
+    }
+    .new_color1 {
+        background-color: green;
+    }
+    .new_color2 {
+        background-color: red;
+    }
+    
+    </style>
+<body>
+
+<!-- 1. Разместить на странице блок DIV. 
+    По клику на нем левой кнопкой мыши его цвет должен становиться зеленым, правой – красным. 
+    Меню браузера по умолчанию появляться не должно.-->
+
+    <div></div>
+<script>
+    
+    
+
+        let el = document.querySelector('div');
+        el.addEventListener('click', changeColor1, false);
+        function changeColor1(e){
+        e.stopPropagation();
+        el.classList.add('new_color1');
+        el.classList.remove('new_color2');
+       
+    }
+
+        el.addEventListener('contextmenu', changeColor2);
+        
+
+        function changeColor2() {
+            event.preventDefault()
+            el.classList.add('new_color2');
+            el.classList.remove('new_color1');
+        }
+
+       
+
+   
+</script>
+
+    
+</body>
+</html>
